@@ -1,0 +1,9 @@
+# Kaggle data is not committed
+data/
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
