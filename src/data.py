@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 DATA_DIR = "data/mitsui-commodity-prediction-challenge"
@@ -20,4 +21,6 @@ def preprocess(train):
     prices = train[close_cols]
     prices = prices.drop(columns=["US_Stock_GOLD_adj_close"])
     prices = prices.ffill()
-    return prices
+    returns = np.log(prices).diff()
+    returns = returns.fillna(0)
+    return returns
